@@ -10,7 +10,7 @@ RUN cd $JBOSS_HOME \
     && curl -OL https://github.com/wildfly-extras/wildfly-camel/releases/download/4.6.0/wildfly-camel-patch-4.6.0.tar.gz \
     && tar xf wildfly-camel-patch-4.6.0.tar.gz \
     && rm wildfly-camel-patch-4.6.0.tar.gz \
-    && chown -R jboss:0 ${JBOSS_HOME}
+    && chown -R jboss:0 ${JBOSS_HOME} && chmod -R ug+rw ${JBOSS_HOME}
 
 # If file is local:
 #ADD wildfly-camel-patch-4.6.0.tar.gz $JBOSS_HOME
